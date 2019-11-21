@@ -1,0 +1,1 @@
+SELECT c.nome, SUM(qs.score) as total_score FROM candidate as c JOIN question_score as qs JOIN test as t ON c.id = qs.candidate_id AND t.test_id = qs.test_id AND t.name = "Java backend" GROUP BY qs.candidate_id ORDER BY total_score DESC
